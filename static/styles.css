@@ -1,0 +1,413 @@
+/* Réinitialisation CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.conteneur-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Barre de navigation */
+.barre-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu a:hover, .menu a.actif {
+    color: #2e86de;
+}
+
+.bouton-connexion {
+    background-color: transparent;
+    border: 2px solid #2e86de;
+    color: #2e86de;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.bouton-connexion:hover {
+    background-color: #2e86de;
+    color: white;
+}
+
+/* Section Hero */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin: 50px 0;
+}
+
+.texte-hero {
+    flex: 1;
+}
+
+.texte-hero h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.texte-hero p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.bouton-principal {
+    background-color: #2e86de;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bouton-principal:hover {
+    background-color: #1c6bc0;
+}
+
+.image-hero {
+    flex: 1;
+}
+
+.image-hero img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Recherche */
+.recherche-medecin {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.recherche-medecin h2 {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.formulaire-recherche {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.champ-recherche {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.champ-recherche i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.champ-recherche input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 1rem;
+}
+
+.bouton-recherche {
+    background-color: #2e86de;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.bouton-recherche:hover {
+    background-color: #1c6bc0;
+}
+
+/* Section Spécialités */
+.specialites {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.specialites h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.liste-specialites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.carte-specialite {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.carte-specialite:hover {
+    transform: translateY(-5px);
+}
+
+.carte-specialite img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.carte-specialite h3 {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Section Fonctionnement */
+.fonctionnement {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.fonctionnement h2 {
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.etapes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.etape {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+}
+
+.cercle {
+    width: 60px;
+    height: 60px;
+    background-color: #2e86de;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+.etape h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.etape p {
+    color: #666;
+}
+
+/* Section Témoignages */
+.temoignages {
+    margin: 60px 0;
+    text-align: center;
+}
+
+.temoignages h2 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.liste-temoignages {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.temoignage {
+    background-color: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: left;
+}
+
+.etoiles {
+    color: #ffc107;
+    margin-bottom: 15px;
+}
+
+.temoignage p {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.utilisateur {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.utilisateur img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.utilisateur h4 {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 50px 0 20px;
+    margin-top: 80px;
+}
+
+.colonnes-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.colonne {
+    flex: 1;
+    min-width: 250px;
+}
+
+.colonne h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.colonne p {
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.colonne ul {
+    list-style: none;
+}
+
+.colonne ul li {
+    margin-bottom: 10px;
+}
+
+.colonne ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.colonne ul li a:hover {
+    color: #2e86de;
+}
+
+.reseaux-sociaux {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.reseaux-sociaux a {
+    color: #bbb;
+    font-size: 1.3rem;
+    transition: color 0.3s;
+}
+
+.reseaux-sociaux a:hover {
+    color: #2e86de;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+    }
+    
+    .texte-hero, .image-hero {
+        text-align: center;
+    }
+    
+    .formulaire-recherche {
+        flex-direction: column;
+    }
+    
+    .etapes {
+        flex-direction: column;
+    }
+}
