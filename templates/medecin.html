@@ -1,0 +1,323 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Médecin</title>
+    <link rel="stylesheet" href="../static/styles_medecin.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="./index.html">Accueil</a>
+                <a href="./templates/medecin.html" class="active">Médecins</a>
+                <a href="../templates/rdv.html">Mes rendez-vous</a>
+                <a href="#">Profil</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="doctor-profile-container">
+        <div class="back-button">
+            <a href="#"><i class="fas fa-arrow-left"></i> Retour aux résultats</a>
+        </div>
+
+        <div class="doctor-profile-header">
+            <div class="doctor-image">
+                <img src="/doctor_profile.png" alt="Photo du médecin">
+            </div>
+            <div class="doctor-header-info">
+                <h1>Dr. Martine</h1>
+                <p class="specialty">Médecin généraliste</p>
+                <div class="doctor-rating">
+                    <span class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </span>
+                    <span class="rating-count">(124 avis)</span>
+                </div>
+                <div class="doctor-availability available">
+                    <i class="fas fa-circle"></i>
+                    <span>Disponible aujourd'hui</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="doctor-profile-actions">
+            <button class="btn-appointment primary-btn">
+                <i class="far fa-calendar-plus"></i> Prendre rendez-vous
+            </button>
+            <button class="btn-favorite secondary-btn">
+                <i class="far fa-heart"></i> Favoris
+            </button>
+            <button class="btn-share secondary-btn">
+                <i class="fas fa-share-alt"></i> Partager
+            </button>
+        </div>
+
+        <div class="doctor-profile-tabs">
+            <div class="tab-headers">
+                <button class="tab-btn active" data-tab="info">Informations</button>
+                <button class="tab-btn" data-tab="schedule">Disponibilités</button>
+                <button class="tab-btn" data-tab="reviews">Avis (124)</button>
+            </div>
+            
+            <div class="tab-content" id="info-tab">
+                <div class="info-section">
+                    <h3>À propos</h3>
+                    <p>Dr. Martine est un médecin généraliste qualifié avec plus de 10 ans d'expérience. Elle est spécialisée dans les soins préventifs, la gestion des maladies chroniques et la médecine familiale.</p>
+                </div>
+
+                <div class="info-section">
+                    <h3>Spécialités</h3>
+                    <ul class="specialties-list">
+                        <li>Médecine générale</li>
+                        <li>Soins préventifs</li>
+                        <li>Gestion des maladies chroniques</li>
+                        <li>Médecine familiale</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>Formation</h3>
+                    <div class="education-item">
+                        <div class="education-year">2008 - 2013</div>
+                        <div class="education-details">
+                            <p class="education-degree">Doctorat en Médecine</p>
+                            <p class="education-school">Université de Paris</p>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-year">2013 - 2016</div>
+                        <div class="education-details">
+                            <p class="education-degree">Spécialisation en Médecine Générale</p>
+                            <p class="education-school">Centre Hospitalier Universitaire de Lyon</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Langues parlées</h3>
+                    <ul class="languages-list">
+                        <li>Français (natif)</li>
+                        <li>Anglais (courant)</li>
+                        <li>Espagnol (intermédiaire)</li>
+                    </ul>
+                </div>
+
+                <div class="info-section">
+                    <h3>Adresse du cabinet</h3>
+                    <div class="location-info">
+                        <p>15 Rue des mangues</p>
+                        <p>CI</p>
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <i class="fas fa-map-marker-alt"></i> Voir sur la carte
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-section">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> 01 90 45 67 89</p>
+                        <p><i class="fas fa-envelope"></i> dr@exemple.fr</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content hidden" id="schedule-tab">
+                <div class="schedule-header">
+                    <h3>Disponibilités</h3>
+                    <div class="month-selector">
+                        <button class="month-nav"><i class="fas fa-chevron-left"></i></button>
+                        <span>Mai 2023</span>
+                        <button class="month-nav"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <div class="week-selector">
+                    <div class="date-block">
+                        <div class="day">Lun</div>
+                        <div class="date active">15</div>
+                    </div>
+                    <div class="date-block">
+                        <div class="day">Mar</div>
+                        <div class="date">16</div>
+                    </div>
+                    <div class="date-block">
+                        <div class="day">Mer</div>
+                        <div class="date">17</div>
+                    </div>
+                    <div class="date-block">
+                        <div class="day">Jeu</div>
+                        <div class="date">18</div>
+                    </div>
+                    <div class="date-block">
+                        <div class="day">Ven</div>
+                        <div class="date">19</div>
+                    </div>
+                    <div class="date-block inactive">
+                        <div class="day">Sam</div>
+                        <div class="date">20</div>
+                    </div>
+                    <div class="date-block inactive">
+                        <div class="day">Dim</div>
+                        <div class="date">21</div>
+                    </div>
+                </div>
+                
+                <div class="time-slots">
+                    <h4>Matin</h4>
+                    <div class="slots-grid">
+                        <button class="time-slot">09:00</button>
+                        <button class="time-slot">09:30</button>
+                        <button class="time-slot booked">10:00</button>
+                        <button class="time-slot booked">10:30</button>
+                        <button class="time-slot">11:00</button>
+                        <button class="time-slot">11:30</button>
+                    </div>
+                    
+                    <h4>Après-midi</h4>
+                    <div class="slots-grid">
+                        <button class="time-slot booked">14:00</button>
+                        <button class="time-slot">14:30</button>
+                        <button class="time-slot">15:00</button>
+                        <button class="time-slot booked">15:30</button>
+                        <button class="time-slot">16:00</button>
+                        <button class="time-slot">16:30</button>
+                        <button class="time-slot">17:00</button>
+                        <button class="time-slot">17:30</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content hidden" id="reviews-tab">
+                <div class="reviews-header">
+                    <h3>Avis et évaluations</h3>
+                    <button class="btn-review">Laisser un avis</button>
+                </div>
+                
+                <div class="reviews-summary">
+                    <div class="rating-overall">
+                        <span class="rating-number">4.8</span>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span>124 avis</span>
+                    </div>
+                    
+                    <div class="rating-breakdown">
+                        <div class="rating-bar">
+                            <span>5</span>
+                            <div class="progress-bar"><div class="progress" style="width: 75%"></div></div>
+                            <span>75%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>4</span>
+                            <div class="progress-bar"><div class="progress" style="width: 20%"></div></div>
+                            <span>20%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>3</span>
+                            <div class="progress-bar"><div class="progress" style="width: 3%"></div></div>
+                            <span>3%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>2</span>
+                            <div class="progress-bar"><div class="progress" style="width: 1%"></div></div>
+                            <span>1%</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>1</span>
+                            <div class="progress-bar"><div class="progress" style="width: 1%"></div></div>
+                            <span>1%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reviews-list">
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <span class="reviewer-initial">M</span>
+                                <div>
+                                    <div class="reviewer-name">Marie Lore.</div>
+                                    <div class="review-date">2 mai 2023</div>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <p>Très bon médecin, attentive et à l'écoute. Le diagnostic était précis et le traitement efficace. Je recommande vivement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <span class="reviewer-initial">T</span>
+                                <div>
+                                    <div class="reviewer-name">mahel koffi</div>
+                                    <div class="review-date">30 mai 2025</div>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <p>Consultation rapide et efficace. Le médecin explique bien les choses et prend le temps de répondre aux questions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <span class="reviewer-initial">S</span>
+                                <div>
+                                    <div class="reviewer-name">koffi andre.</div>
+                                    <div class="review-date">28 mars 2023</div>
+                                </div>
+                            </div>
+                            <div class="review-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="review-content">
+                            <p>Excellente prise en charge, Dr. Martine est très professionnelle et bienveillante. Cabinet propre et accueil agréable.</p>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-load-more">Voir plus d'avis</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./static/script_medecin.js"></script>
+</body>
+</html>

@@ -1,9 +1,24 @@
-document.addEventListener('DOMContentLoaded', () => {
+/**
+ * Doctors list page functionality
+ */
+
+import { showToast, generateStars } from './common.js';
+
+export function initDoctorsList() {
+    const searchInput = document.getElementById('search-input');
+    const allSpecialtiesBtn = document.getElementById('all-specialties');
+    const allCategoriesBtn = document.getElementById('all-categories');
+    const filtersModal = document.getElementById('filters-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const specialtiesList = document.querySelector('.specialties-list');
+    const applyFiltersBtn = document.getElementById('apply-filters');
+    const resetFiltersBtn = document.getElementById('reset-filters');
+
     // Données des médecins
     const doctors = [
         {
             id: 1,
-            name: 'Dr. Martine',
+            name: 'Dr. Sophie Martin',
             specialty: 'Médecin généraliste',
             image: '/a/91dbf956-397c-418c-99b3-6afe54e16006',
             rating: 4.8,
@@ -13,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 2,
-            name: 'Dr. Thomas ',
+            name: 'Dr. Thomas Dubois',
             specialty: 'Cardiologue',
             image: '/a/91dbf956-397c-418c-99b3-6afe54e16006',
             rating: 4.9,
@@ -23,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 3,
-            name: 'Dr. Marie ',
+            name: 'Dr. Marie Leclerc',
             specialty: 'Pédiatre',
             image: '/a/91dbf956-397c-418c-99b3-6afe54e16006',
             rating: 4.7,
@@ -35,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 4,
             name: 'Dr. Philippe Moreau',
             specialty: 'Dermatologue',
-            image: '',
+            image: '/a/91dbf956-397c-418c-99b3-6afe54e16006',
             rating: 4.6,
             ratingCount: 112,
             availability: 'Lundi prochain',
@@ -57,28 +72,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Référence aux éléments DOM
     const doctorsList = document.getElementById('doctors-list');
-    const searchInput = document.getElementById('search-input');
-    const allSpecialtiesBtn = document.getElementById('all-specialties');
-    const allCategoriesBtn = document.getElementById('all-categories');
-    const filtersModal = document.getElementById('filters-modal');
-    const closeModal = document.querySelector('.close-modal');
-    const specialtiesList = document.querySelector('.specialties-list');
-    const applyFiltersBtn = document.getElementById('apply-filters');
-    const resetFiltersBtn = document.getElementById('reset-filters');
 
     // Variables d'état
     let activeFilters = [];
     let searchTerm = '';
+
+    // Initialiser l'application
+    initSpecialtiesFilter();
+    renderDoctors();
+    setupEventListeners();
 
     // Fonction pour afficher les médecins
     function renderDoctors() {
         // Filtrer les médecins en fonction de la recherche et des filtres
         const filteredDoctors = doctors.filter(doctor => {
             const matchesSearch = doctor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                                 doctor.specialty.toLowerCase().includes(searchTerm.toLowerCase());
-            
+                                doctor.specialty.toLowerCase().includes(searchTerm.toLowerCase());
+
             const matchesFilter = activeFilters.length === 0 || activeFilters.includes(doctor.specialty);
-            
+
             return matchesSearch && matchesFilter;
         });
 
@@ -103,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Déterminer la couleur de disponibilité
                 const availabilityColor = doctor.availabilityStatus === 'Disponible' ? '#4caf50' : 
-                                          doctor.availabilityStatus === 'Peu disponible' ? '#ff9800' : '#f44336';
+                                        doctor.availabilityStatus === 'Peu disponible' ? '#ff9800' : '#f44336';
 
                 doctorCard.innerHTML = `
                     <div class="doctor-image">
@@ -132,116 +144,79 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Générer les étoiles pour la notation
-    function generateStars(rating) {
-        const fullStars = Math.floor(rating);
-        const halfStar = rating % 1 >= 0.5;
-        const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-        
-        let starsHTML = '';
-        
-        for (let i = 0; i < fullStars; i++) {
-            starsHTML += '<i class="fas fa-star"></i>';
-        }
-        
-        if (halfStar) {
-            starsHTML += '<i class="fas fa-star-half-alt"></i>';
-        }
-        
-        for (let i = 0; i < emptyStars; i++) {
-            starsHTML += '<i class="far fa-star"></i>';
-        }
-        
-        return starsHTML;
-    }
-
     // Initialiser les spécialités dans le modal
     function initSpecialtiesFilter() {
         specialtiesList.innerHTML = '';
-        
+
         specialties.forEach(specialty => {
             const specialtyItem = document.createElement('div');
             specialtyItem.className = 'specialty-item';
-            
+
             specialtyItem.innerHTML = `
                 <input type="checkbox" id="${specialty}" class="specialty-checkbox" value="${specialty}" 
                     ${activeFilters.includes(specialty) ? 'checked' : ''}>
                 <label for="${specialty}">${specialty}</label>
             `;
-            
+
             specialtiesList.appendChild(specialtyItem);
         });
     }
 
-    // Événements
-    searchInput.addEventListener('input', (e) => {
-        searchTerm = e.target.value;
-        renderDoctors();
-    });
+    // Configure all event listeners
+    function setupEventListeners() {
+        searchInput.addEventListener('input', (e) => {
+            searchTerm = e.target.value;
+            renderDoctors();
+        });
 
-    allSpecialtiesBtn.addEventListener('click', () => {
-        initSpecialtiesFilter();
-        filtersModal.style.display = 'block';
-    });
+        allSpecialtiesBtn.addEventListener('click', () => {
+            initSpecialtiesFilter();
+            filtersModal.style.display = 'block';
+        });
 
-    allCategoriesBtn.addEventListener('click', () => {
-        // À implémenter pour le filtrage par catégorie
-        alert('Fonctionnalité de filtrage par catégorie à venir');
-    });
+        allCategoriesBtn.addEventListener('click', () => {
+            // À implémenter pour le filtrage par catégorie
+            alert('Fonctionnalité de filtrage par catégorie à venir');
+        });
 
-    closeModal.addEventListener('click', () => {
-        filtersModal.style.display = 'none';
-    });
-
-    window.addEventListener('click', (e) => {
-        if (e.target === filtersModal) {
+        closeModal.addEventListener('click', () => {
             filtersModal.style.display = 'none';
-        }
-    });
-
-    applyFiltersBtn.addEventListener('click', () => {
-        activeFilters = [];
-        
-        document.querySelectorAll('.specialty-checkbox:checked').forEach(checkbox => {
-            activeFilters.push(checkbox.value);
         });
-        
-        filtersModal.style.display = 'none';
-        renderDoctors();
-        
-        // Mettre à jour le texte du bouton de filtre
-        if (activeFilters.length === 0) {
+
+        window.addEventListener('click', (e) => {
+            if (e.target === filtersModal) {
+                filtersModal.style.display = 'none';
+            }
+        });
+
+        applyFiltersBtn.addEventListener('click', () => {
+            activeFilters = [];
+
+            document.querySelectorAll('.specialty-checkbox:checked').forEach(checkbox => {
+                activeFilters.push(checkbox.value);
+            });
+
+            filtersModal.style.display = 'none';
+            renderDoctors();
+
+            // Mettre à jour le texte du bouton de filtre
+            if (activeFilters.length === 0) {
+                allSpecialtiesBtn.textContent = 'Toutes les spécialités';
+            } else if (activeFilters.length === 1) {
+                allSpecialtiesBtn.textContent = activeFilters[0];
+            } else {
+                allSpecialtiesBtn.textContent = `${activeFilters.length} spécialités`;
+            }
+        });
+
+        resetFiltersBtn.addEventListener('click', () => {
+            document.querySelectorAll('.specialty-checkbox').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            activeFilters = [];
             allSpecialtiesBtn.textContent = 'Toutes les spécialités';
-        } else if (activeFilters.length === 1) {
-            allSpecialtiesBtn.textContent = activeFilters[0];
-        } else {
-            allSpecialtiesBtn.textContent = `${activeFilters.length} spécialités`;
-        }
-    });
-
-    resetFiltersBtn.addEventListener('click', () => {
-        document.querySelectorAll('.specialty-checkbox').forEach(checkbox => {
-            checkbox.checked = false;
+            renderDoctors();
         });
-        
-        activeFilters = [];
-        allSpecialtiesBtn.textContent = 'Toutes les spécialités';
-        renderDoctors();
-    });
-
-    // Animation pour les boutons
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            this.classList.add('button-click');
-            setTimeout(() => {
-                this.classList.remove('button-click');
-            }, 150);
-        });
-    });
-
-    // Initialiser l'application
-    initSpecialtiesFilter();
-    renderDoctors();
-});
-
+    }
+}

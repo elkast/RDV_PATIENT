@@ -1,0 +1,191 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes rendez-vous</title>
+    <link rel="stylesheet" href="../static/styles_rdv.css">
+    
+
+    <script type="module" src="./static/script_rdv.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="../index.html">Accueil</a>
+                <a href="medecin.html">Médecins</a>
+                <a href="../templates/rdv.html" class="active">Mes rendez-vous</a>
+                <a href="#">Profil</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="appointments-container">
+        <h1>Mes rendez-vous</h1>
+        
+        <div class="appointments-filters">
+            <button class="filter-btn active" data-filter="upcoming">À venir</button>
+            <button class="filter-btn" data-filter="past">Passés</button>
+            <button class="filter-btn" data-filter="all">Tous</button>
+        </div>
+        
+        <div class="appointment-list">
+            <!-- Upcoming appointments -->
+            <div class="appointment-item upcoming">
+                <div class="appointment-date">
+                    <div class="date-block">
+                        <div class="date-month">Mai</div>
+                        <div class="date-day">18</div>
+                        <div class="date-weekday">Jeudi</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="appointment-time">14:30</div>
+                        <div class="appointment-duration">30 min</div>
+                    </div>
+                </div>
+                
+                <div class="appointment-details">
+                    <div class="doctor-info">
+                        <img src="/doctor_profile.png" alt="Photo du médecin" class="doctor-small-img">
+                        <div>
+                            <h3>Dr.Martine </h3>
+                            <p class="specialty">Médecin généraliste</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> 15 Rue des Médecins, CI</p>
+                        </div>
+                    </div>
+                    
+                    <div class="appointment-reason">
+                        <p><strong>Motif:</strong> Consultation générale</p>
+                    </div>
+                    
+                    <div class="appointment-actions">
+                        <button class="btn-reschedule secondary-btn"><i class="far fa-calendar-alt"></i> Reprogrammer</button>
+                        <button class="btn-cancel secondary-btn"><i class="far fa-times-circle"></i> Annuler</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="appointment-item upcoming">
+                <div class="appointment-date">
+                    <div class="date-block">
+                        <div class="date-month">Juin</div>
+                        <div class="date-day">02</div>
+                        <div class="date-weekday">Vendredi</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="appointment-time">10:00</div>
+                        <div class="appointment-duration">45 min</div>
+                    </div>
+                </div>
+                
+                <div class="appointment-details">
+                    <div class="doctor-info">
+                        <img src="/doctor_profile.png" alt="Photo du médecin" class="doctor-small-img">
+                        <div>
+                            <h3>Dr. Thomas </h3>
+                            <p class="specialty">Cardiologue</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> 8 Avenue de la Santé, CI</p>
+                        </div>
+                    </div>
+                    
+                    <div class="appointment-reason">
+                        <p><strong>Motif:</strong> Suivi cardiaque annuel</p>
+                    </div>
+                    
+                    <div class="appointment-actions">
+                        <button class="btn-reschedule secondary-btn"><i class="far fa-calendar-alt"></i> Reprogrammer</button>
+                        <button class="btn-cancel secondary-btn"><i class="far fa-times-circle"></i> Annuler</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Past appointments -->
+            <div class="appointment-item past">
+                <div class="appointment-date">
+                    <div class="date-block">
+                        <div class="date-month">Avr</div>
+                        <div class="date-day">29</div>
+                        <div class="date-weekday">Samedi</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="appointment-time">16:15</div>
+                        <div class="appointment-duration">30 min</div>
+                    </div>
+                </div>
+                
+                <div class="appointment-details">
+                    <div class="doctor-info">
+                        <img src="/doctor_profile.png" alt="Photo du médecin" class="doctor-small-img">
+                        <div>
+                            <h3>Dr. Marie </h3>
+                            <p class="specialty">Pédiatre</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> 22 Rue de l'Enfant, CI</p>
+                        </div>
+                    </div>
+                    
+                    <div class="appointment-reason">
+                        <p><strong>Motif:</strong> Vaccin grippe saisonnière</p>
+                    </div>
+                    
+                    <div class="appointment-actions">
+                        <button class="btn-review primary-btn"><i class="far fa-star"></i> Donner un avis</button>
+                        <button class="btn-rebook secondary-btn"><i class="far fa-calendar-plus"></i> Reprendre rdv</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="appointment-item past">
+                <div class="appointment-date">
+                    <div class="date-block">
+                        <div class="date-month">Mar</div>
+                        <div class="date-day">15</div>
+                        <div class="date-weekday">Mercredi</div>
+                    </div>
+                    <div class="time-block">
+                        <div class="appointment-time">11:30</div>
+                        <div class="appointment-duration">30 min</div>
+                    </div>
+                </div>
+                
+                <div class="appointment-details">
+                    <div class="doctor-info">
+                        <img src="/doctor_profile.png" alt="Photo du médecin" class="doctor-small-img">
+                        <div>
+                            <h3>Dr.Martine</h3>
+                            <p class="specialty">Médecin généraliste</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> 15 Rue des Médecins, CI</p>
+                        </div>
+                    </div>
+                    
+                    <div class="appointment-reason">
+                        <p><strong>Motif:</strong> Rhume et fièvre</p>
+                    </div>
+                    
+                    <div class="appointment-actions completed">
+                        <div class="rating-given">
+                            <span>Votre avis: </span>
+                            <span class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                        </div>
+                        <button class="btn-rebook secondary-btn"><i class="far fa-calendar-plus"></i> Reprendre rdv</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="no-appointments hidden">
+            <div class="empty-state">
+                <i class="far fa-calendar-times"></i>
+                <h3>Aucun rendez-vous</h3>
+                <p>Vous n'avez pas de rendez-vous correspondant à ce filtre.</p>
+                <button class="btn-book-new primary-btn">Prendre un rendez-vous</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
