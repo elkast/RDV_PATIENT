@@ -17,59 +17,18 @@ document.addEventListener('DOMContentLoaded', function() {
         observateur.observe(section);
     });
 
-    // Gestion du bouton de connexion
-    const boutonConnexion = document.querySelector('.bouton-connexion');
-    if (boutonConnexion) {
-        boutonConnexion.addEventListener('click', function() {
-            alert("La fonctionnalité de connexion sera bientôt disponible");
-        });
-    }
-
-    // Gestion du bouton de prise de rendez-vous
-    const boutonRDV = document.querySelector('.bouton-principal');
-    if (boutonRDV) {
-        boutonRDV.addEventListener('click', function() {
-            alert("La fonctionnalité de prise de rendez-vous sera bientôt disponible");
-        });
-    }
-
-    // Gestion du formulaire de recherche
-    const formulaireRecherche = document.querySelector('.formulaire-recherche');
-    if (formulaireRecherche) {
-        formulaireRecherche.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const specialite = document.querySelector('.formulaire-recherche input:first-child').value;
-            const lieu = document.querySelector('.formulaire-recherche input:last-child').value;
-            
-            alert(`Recherche de médecins pour: ${specialite} à ${lieu}`);
-        });
-    }
-
-    // Cartes de spécialités interactives
+    // Cartes de spécialités interactives - animation au survol uniquement
     const cartesSpecialite = document.querySelectorAll('.carte-specialite');
     cartesSpecialite.forEach(carte => {
-        carte.addEventListener('click', function() {
-            const specialite = this.querySelector('h3').textContent;
-            alert(`Vous avez sélectionné la spécialité: ${specialite}`);
+        carte.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+        });
+        carte.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = 'none';
         });
     });
-
-    // Bouton de recherche
-    const boutonRecherche = document.querySelector('.bouton-recherche');
-    if (boutonRecherche) {
-        boutonRecherche.addEventListener('click', function(e) {
-            e.preventDefault();
-            const specialite = document.querySelector('.champ-recherche:first-child input').value;
-            const lieu = document.querySelector('.champ-recherche:last-child input').value;
-            
-            if (!specialite || !lieu) {
-                alert("Veuillez remplir tous les champs de recherche");
-                return;
-            }
-            
-            alert(`Recherche de médecins pour: ${specialite} à ${lieu}`);
-        });
-    }
 });
 
 // Ajout de CSS dynamique pour les animations
