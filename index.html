@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="./static/styles_index.css">
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/js/all.min.js"></script> 
     <!-- //script pour l'utilisation des icônes des cartes à ne pas supprimer  -->
-   
-
 </head>
 <body>
-
-        <header>
+    <header>
         <nav>
             <div class="nav-links">
                 <a href="./templates/acceuil.html" class="active">Accueil</a>
@@ -22,7 +19,7 @@
             </div>
 
             <div class="auth-buttons" style="display: flex; gap: 20px; margin-top: 20px;">
-                <a href="./templates/connexion.html" class="login-btn" style="padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Se connecter</a>
+                <a href="./templates/connexion.html" class="login-btn" style="padding: 10px 20px; background-color: #2196F3; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Se connecter</a>
                 <a href="./templates/inscription.html" class="register-btn" style="padding: 10px 20px; background-color: #2196F3; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">S'inscrire</a>
             </div>            
         </nav>
@@ -32,17 +29,19 @@
         <!-- Section d'en-tête -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Bienvenue sur la page d'accueil du projet</h1>
+                <h1>Bienvenue </h1>
                 <p class="subtitle">Votre santé simplifiée : prenez rendez-vous en ligne avec vos professionnels de santé</p>
                 <div class="hero-buttons">
                     <button class="primary-btn">
                         <i class="fas fa-user-md"></i>
                         Espace professionnel de santé
                     </button>
-                    <button class="secondary-btn">
-                        <i class="fas fa-user"></i>
-                        Espace patient
-                    </button>
+                    <a href="./templates/connexion.html">
+                        <button class="secondary-btn">
+                            <i class="fas fa-user"></i>
+                            Espace patient
+                        </button>
+                    </a>
                 </div>
             </div>
         </section>
