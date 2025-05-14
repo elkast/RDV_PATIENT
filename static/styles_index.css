@@ -1,89 +1,199 @@
 /* Styles spécifiques à la page d'accueil */
 .home-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
-/* Hero section */
-.hero {
-    background: linear-gradient(135deg, #0047AB, #4169E1);
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-    border-radius: 15px;
-    margin: 20px 0;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+/* En-tête et Navigation */
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-.hero-content {
-    max-width: 800px;
+nav {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+}
+
+.nav-links {
+    display: flex;
     gap: 30px;
+    align-items: center;
 }
 
-.hero h1 {
-    font-size: 52px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin: 0;
-    line-height: 1.2;
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
-.hero .subtitle {
-    font-size: 26px;
-    line-height: 1.5;
-    max-width: 600px;
+.nav-links a:hover {
+    color: #4CAF50;
 }
 
-.hero-buttons {
+.nav-links a.active {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.auth-buttons {
     display: flex;
     gap: 20px;
-    justify-content: center;
-    margin-top: 20px;
 }
 
-.hero-buttons button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.login-btn, .register-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
-.hero-buttons button:hover {
+.login-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.register-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+.login-btn:hover, .register-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Features section */
+/* Styles responsifs */
+@media screen and (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 15px;
+        margin: 10px 0;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .login-btn, .register-btn {
+        text-align: center;
+        width: 100%;
+        display: block;
+    }
+}
+
+/* Section héro */
+.hero {
+    background: linear-gradient(135deg, #0047AB, #4169E1, #1E90FF);
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+    border-radius: 20px;
+    margin: 30px 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+    margin-top: 100px;
+}
+
+.hero-content {
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.primary-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Section des fonctionnalités */
 .features {
     padding: 60px 0;
 }
 
 .features h2 {
     text-align: center;
-    font-size: 36px;
     margin-bottom: 50px;
+    font-size: 2em;
     color: #333;
 }
 
 .features-grid {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 40px;
 }
 
+.feature-section {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 15px;
+}
+
 .feature-section h3 {
-    font-size: 24px;
     margin-bottom: 30px;
-    color: #4285f4;
+    color: #333;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -91,36 +201,27 @@
 
 .feature-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .feature-card {
-    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
-    border: 1px solid #e9ecef;
-    padding: 35px;
+    background: white;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
 }
 
 .feature-card i {
-    font-size: 42px;
-    background: -webkit-linear-gradient(45deg, #0047AB, #4169E1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 15px;
 }
 
 .feature-card h4 {
-    font-size: 20px;
-    margin-bottom: 15px;
     color: #333;
+    margin-bottom: 10px;
 }
 
 .feature-card p {
@@ -128,251 +229,28 @@
     line-height: 1.5;
 }
 
-/* Stats section */
-.stats {
-    background: linear-gradient(to right, #f8f9fa, #ffffff, #f8f9fa);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    padding: 60px 0;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    border-radius: 15px;
-    margin: 40px 0;
-}
-
-.stat-item {
-    padding: 20px;
-}
-
-.stat-number {
-    background: -webkit-linear-gradient(45deg, #0047AB, #4169E1);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 52px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.stat-label {
-    font-size: 18px;
-    color: #666;
-}
-
-/* Call to action section */
-.cta {
-    text-align: center;
-    padding: 80px 0;
-}
-
-.cta h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.cta p {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 40px;
-}
-
-.cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.cta-buttons button {
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta-buttons button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* Responsive styles */
-@media (max-width: 992px) {
-    .feature-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .hero h1 {
-        font-size: 36px;
-    }
-    
-    .hero .subtitle {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .stats {
-        flex-direction: column;
-    }
-    
-    .stat-item {
-        margin-bottom: 30px;
-    }
-    
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .hero-content {
+/* Pour assurer une meilleure réactivité */
+@media screen and (max-width: 480px) {
+    .home-container {
         padding: 0 15px;
     }
-}
 
-@media (max-width: 576px) {
-    .feature-cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .hero-buttons button {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .footer-content {
-        grid-template-columns: 1fr;
-    }
-    
     .hero {
-        padding: 60px 0;
+        padding: 80px 0;
+        margin-top: 80px;
     }
-}
 
-/* section pour le responsive de la page */
-
-/* Responsive design */
-@media (max-width: 992px) {
-    .feature-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .hero h1 {
-        font-size: 36px;
-    }
-}
-
-@media (max-width: 768px) {
-    .stats {
-        flex-direction: column;
-    }
-    
-    .stat-item {
-        margin-bottom: 30px;
-    }
-    
-    .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .doctor-profile-header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .doctor-image {
-        margin-bottom: 15px;
-    }
-    
-    .doctor-availability, .doctor-rating {
-        justify-content: center;
-    }
-    
-    .doctor-profile-actions {
-        flex-direction: column;
-    }
-    
-    .reviews-summary {
-        flex-direction: column;
-    }
-    
-    .rating-overall {
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-        padding-right: 0;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .rating-breakdown {
-        padding-left: 0;
-    }
-    
-    .slots-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .slots-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .appointment-item {
-        flex-direction: column;
-    }
-    
-    .appointment-date {
-        flex-direction: row;
-        padding: 10px;
-        flex: initial;
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    .date-block {
-        margin-bottom: 0;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-    
-    .time-block {
-        border-top: none;
-        padding-top: 0;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-    
-    .appointment-actions {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 576px) {
-    .feature-cards {
-        grid-template-columns: 1fr;
-    }
-    
     .hero-buttons {
         flex-direction: column;
     }
-    
-    .footer-content {
+
+    .feature-cards {
         grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .home-container {
+        padding: 0 20px;
     }
 }

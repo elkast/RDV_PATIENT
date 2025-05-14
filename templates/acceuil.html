@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plateforme Médicale</title>
     <link rel="stylesheet" href="../static/styles.css">
-    
+
 </head>
 <body>
     <header>
@@ -30,24 +31,78 @@
         </div>
 
         <div class="doctors-list" id="doctors-list">
-            <!-- Les médecins seront générés par JavaScript  du fate de ne pas encore eu de base de donne-->
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <img src="#" alt="Dr. Martine">
+                </div>
+                <div class="doctor-info">
+                    <h2 class="doctor-name">Dr. Martine</h2>
+                    <p class="doctor-specialty">Médecin généraliste</p>
+                    <div class="doctor-rating">★★★★★ (124 avis)</div>
+                    <div class="doctor-availability" style="color: #4caf50;">
+                        Disponible: Aujourd'hui
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="btn-appointment">Prendre rendez-vous</button>
+                        <button class="btn-profile">Voir profil</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <img src="/a/91dbf956-397c-418c-99b3-6afe54e16006" alt="Dr. Thomas">
+                </div>
+                <div class="doctor-info">
+                    <h2 class="doctor-name">Dr. Thomas</h2>
+                    <p class="doctor-specialty">Cardiologue</p>
+                    <div class="doctor-rating">★★★★★ (89 avis)</div>
+                    <div class="doctor-availability" style="color: #4caf50;">
+                        Disponible: Demain
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="btn-appointment">Prendre rendez-vous</button>
+                        <button class="btn-profile">Voir profil</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <img src="/a/91dbf956-397c-418c-99b3-6afe54e16006" alt="Dr. Marie">
+                </div>
+                <div class="doctor-info">
+                    <h2 class="doctor-name">Dr. Marie</h2>
+                    <p class="doctor-specialty">Pédiatre</p>
+                    <div class="doctor-rating">★★★★★ (156 avis)</div>
+                    <div class="doctor-availability" style="color: #4caf50;">
+                        Disponible: Vendredi
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="btn-appointment">Prendre rendez-vous</button>
+                        <button class="btn-profile">Voir profil</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="doctor-card">
+                <div class="doctor-image">
+                    <img src="" alt="Dr. Philippe Moreau">
+                </div>
+                <div class="doctor-info">
+                    <h2 class="doctor-name">Dr. Philippe Moreau</h2>
+                    <p class="doctor-specialty">Dermatologue</p>
+                    <div class="doctor-rating">★★★★★ (112 avis)</div>
+                    <div class="doctor-availability" style="color: #ff9800;">
+                        Peu disponible: Lundi prochain
+                    </div>
+                    <div class="doctor-actions">
+                        <button class="btn-appointment">Prendre rendez-vous</button>
+                        <button class="btn-profile">Voir profil</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-
-    <div id="filters-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Filtrer par spécialité</h2>
-            <div class="specialties-list">
-                <!-- Les spécialités seront générées par JavaScript du fate de ne pas encore eu de base de donne-->
-            </div>
-            <div class="modal-actions">
-                <button id="apply-filters">Appliquer</button>
-                <button id="reset-filters">Réinitialiser</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="../static/script.js"></script>
 </body>
 </html>
