@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de rendez-vous</title>
+    <link rel="stylesheet" href="../static/confirmation_pdrv.css">
+
+</head>
+<body>
+    <div class="confirmation-container">
+        <div class="confirmation-icon">✓</div>
+        <h1>Rendez-vous confirmé !</h1>
+        <p>Votre rendez-vous a été enregistré avec succès.</p>
+        
+        <div class="appointment-details">
+            <h3>Détails du rendez-vous</h3>
+            <div class="detail-item">
+                <span class="detail-label">Nom :</span>
+                <span id="conf-nom">SEO</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Médecin :</span>
+                <span id="conf-medecin">Dr. Martine (Généraliste)</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Date :</span>
+                <span id="conf-date">15 juin 2023</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Heure :</span>
+                <span id="conf-heure">09:30</span>
+            </div>
+            <div class="detail-item">
+                <span class="detail-label">Motif :</span>
+                <span id="conf-motif">Consultation générale</span>
+            </div>
+        </div>
+        
+        <p>Un rappel vous sera envoyé 24h avant votre rendez-vous.</p>
+        
+        <div class="actions">
+            <a href="../templates/acceuil.html" class="btn btn-primary">Retour à l'accueil</a>
+        </div>
+    </div>
+</body>
+</html>
