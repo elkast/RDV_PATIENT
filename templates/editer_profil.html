@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Éditer Profil Patient</title>
+    <link rel="stylesheet" href="../static/style_editer_profil.css" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>Éditer Profil Patient</h1>
+        <form action="#" method="POST">
+            <fieldset>
+                <legend><strong>Informations Personnelles</strong></legend>
+                <label for="name">Nom complet</label>
+                <input type="text" id="name" name="name" value="Marie Petit" required />
+
+                <label for="birthdate">Date de naissance</label>
+                <input type="date" id="birthdate" name="birthdate" value="1985-03-15" required />
+
+                <label for="dossier">Numéro de dossier</label>
+                <input type="text" id="dossier" name="dossier" value="#PAT-2023-1542" readonly />
+
+                <label for="referent">Médecin référent</label>
+                <input type="text" id="referent" name="referent" value="Dr. Martine" />
+
+                <label for="phone">Téléphone</label>
+                <input type="text" id="phone" name="phone" value="06 12 09 56 78" />
+
+                <label for="address">Adresse</label>
+                <textarea id="address" name="address" rows="2">15 Rue de la Paix, CI</textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend><strong>Antécédents Médicaux</strong></legend>
+                <label for="allergies">Allergies</label>
+                <textarea id="allergies" name="allergies" rows="2">Pas d'allergies connues</textarea>
+
+                <label for="bloodgroup">Groupe sanguin</label>
+                <input type="text" id="bloodgroup" name="bloodgroup" value="A+" />
+
+                <label for="medications">Médicaments</label>
+                <textarea id="medications" name="medications" rows="2">Anti-hypertenseurs (depuis 2018)</textarea>
+            </fieldset>
+
+            <div class="button-group">
+                <button type="submit" name="save"><a href="../templates/enregistrement.html">Enregistrer</a></button>
+                <button type="reset" name="reset" style="background: #888;"><a href="../templates/annulation_edition_profil.html">Annuler</a></button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

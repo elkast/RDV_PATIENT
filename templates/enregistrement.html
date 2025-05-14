@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Confirmation d'enregistrement</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1e3c72;
+            padding: 40px 50px;
+            border-radius: 20px;
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.15),
+                0 0 40px rgba(33, 147, 176, 0.4);
+            text-align: center;
+            max-width: 480px;
+            width: 90%;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 35px;
+            line-height: 1.5;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 48px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 6px 14px rgba(30, 60, 114, 0.5);
+            transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            user-select: none;
+        }
+        .btn:hover,
+        .btn:focus {
+            background: linear-gradient(90deg, #2a5298 0%, #1e3c72 100%);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 28px rgba(30, 60, 114, 0.7);
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" role="alert" aria-live="polite">
+        <h1>Enregistrement réussi !</h1>
+        <p>Votre enregistrement a bien été pris en compte.</p>
+        <a href="../templates/profil.html" class="btn">continuer</a>
+    </div>
+</body>
+</html>
