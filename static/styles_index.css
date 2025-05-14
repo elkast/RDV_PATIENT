@@ -10,12 +10,11 @@
 header {
     background: white;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    padding: 15px, 0;
+    padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    
 }
 
 nav {
@@ -25,12 +24,16 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
 }
 
 .nav-links {
     display: flex;
     gap: 30px;
     align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .nav-links a {
@@ -39,6 +42,7 @@ nav {
     font-weight: 500;
     font-size: 16px;
     transition: color 0.3s ease;
+    padding: 8px 12px;
 }
 
 .nav-links a:hover {
@@ -53,6 +57,7 @@ nav {
 .auth-buttons {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .login-btn, .register-btn {
@@ -61,6 +66,7 @@ nav {
     font-weight: bold;
     text-decoration: none;
     transition: all 0.3s ease;
+    display: inline-block;
 }
 
 .login-btn {
@@ -81,28 +87,26 @@ nav {
 /* Styles responsifs */
 @media screen and (max-width: 768px) {
     nav {
-        flex-direction: row;
-        padding: 15px;
+        padding: 10px 15px;
+        height: auto;
     }
 
     .nav-links {
-        flex-direction: row;
-        width: auto;
-        text-align: center;
-        gap: 15px;
-        margin: 0;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 6px 8px;
     }
 
     .auth-buttons {
-        flex-direction: row;
-        width: auto;
         gap: 10px;
     }
 
     .login-btn, .register-btn {
-        text-align: center;
-        width: auto;
-        display: inline-block;
+        padding: 8px 15px;
+        font-size: 14px;
     }
 }
 

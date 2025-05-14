@@ -25,8 +25,18 @@
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Rechercher un médecin...">
             <div class="filter-buttons">
-                <button id="all-specialties">Toutes les spécialités</button>
-                <button id="all-categories">Toutes les catégories</button>
+                <select id="specialties-select" style="padding: 8px; margin-right: 10px; border-radius: 5px; border: 1px solid #ddd; background-color: white; font-size: 14px;">
+                    <option value="all">Toutes les spécialités</option>
+                    <option value="generaliste">Médecin généraliste</option>
+                    <option value="cardiologue">Cardiologue</option>
+                    <option value="pediatre">Pédiatre</option>
+                </select>
+                <select id="categories-select" style="padding: 8px; margin-right: 10px; border-radius: 5px; border: 1px solid #ddd; background-color: white; font-size: 14px;">
+                    <option value="all">Toutes les catégories</option>
+                    <option value="consultation">Consultation</option>
+                    <option value="urgence">Urgence</option>
+                    <option value="suivi">Suivi médical</option>
+                </select>
             </div>
         </div>
 
@@ -38,31 +48,29 @@
                 <div class="doctor-info">
                     <h2 class="doctor-name">Dr. Martine</h2>
                     <p class="doctor-specialty">Médecin généraliste</p>
-                    <div class="doctor-rating">★★★★★ (124 avis)</div>
                     <div class="doctor-availability" style="color: #4caf50;">
                         Disponible: Aujourd'hui
                     </div>
                     <div class="doctor-actions">
-                        <button class="btn-appointment">Prendre rendez-vous</button>
-                        <button class="btn-profile">Voir profil</button>
+                        <a href="./rdv.html"><button class="btn-appointment">Prendre rendez-vous</button></a>
+                        <a href="./medecin.html"><button class="btn-profile">Voir profil</button></a>
                     </div>
                 </div>
             </div>
 
             <div class="doctor-card">
                 <div class="doctor-image">
-                    <img src="/a/91dbf956-397c-418c-99b3-6afe54e16006" alt="Dr. Thomas">
+                    <img src="#" alt="Dr. Thomas">
                 </div>
                 <div class="doctor-info">
                     <h2 class="doctor-name">Dr. Thomas</h2>
                     <p class="doctor-specialty">Cardiologue</p>
-                    <div class="doctor-rating">★★★★★ (89 avis)</div>
                     <div class="doctor-availability" style="color: #4caf50;">
                         Disponible: Demain
                     </div>
                     <div class="doctor-actions">
-                        <button class="btn-appointment">Prendre rendez-vous</button>
-                        <button class="btn-profile">Voir profil</button>
+                        <a href="./rdv.html"><button class="btn-appointment">Prendre rendez-vous</button></a>
+                        <a href="./medecin.html"><button class="btn-profile">Voir profil</button></a>
                     </div>
                 </div>
             </div>
@@ -74,13 +82,12 @@
                 <div class="doctor-info">
                     <h2 class="doctor-name">Dr. Marie</h2>
                     <p class="doctor-specialty">Pédiatre</p>
-                    <div class="doctor-rating">★★★★★ (156 avis)</div>
                     <div class="doctor-availability" style="color: #4caf50;">
                         Disponible: Vendredi
                     </div>
                     <div class="doctor-actions">
-                        <button class="btn-appointment">Prendre rendez-vous</button>
-                        <button class="btn-profile">Voir profil</button>
+                        <a href="./rdv.html"><button class="btn-appointment">Prendre rendez-vous</button></a>
+                        <a href="./medecin.html"><button class="btn-profile">Voir profil</button></a>
                     </div>
                 </div>
             </div>
@@ -92,13 +99,12 @@
                 <div class="doctor-info">
                     <h2 class="doctor-name">Dr. Philippe Moreau</h2>
                     <p class="doctor-specialty">Dermatologue</p>
-                    <div class="doctor-rating">★★★★★ (112 avis)</div>
                     <div class="doctor-availability" style="color: #ff9800;">
                         Peu disponible: Lundi prochain
                     </div>
                     <div class="doctor-actions">
-                        <button class="btn-appointment">Prendre rendez-vous</button>
-                        <button class="btn-profile">Voir profil</button>
+                        <a href="./rdv.html"><button class="btn-appointment">Prendre rendez-vous</button></a>
+                        <a href="./medecin.html"><button class="btn-profile">Voir profil</button></a>
                     </div>
                 </div>
             </div>
