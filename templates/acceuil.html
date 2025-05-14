@@ -1,0 +1,53 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Médicale</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-links">
+                <a href="" class="active">Accueil</a>
+                <a href="./medecin.html">Médecins</a>
+                <a href="./rdv.html">Mes rendez-vous</a>
+                <a href="./profil.html">Profil</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Médecins disponibles</h1>
+        
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Rechercher un médecin...">
+            <div class="filter-buttons">
+                <button id="all-specialties">Toutes les spécialités</button>
+                <button id="all-categories">Toutes les catégories</button>
+            </div>
+        </div>
+
+        <div class="doctors-list" id="doctors-list">
+            <!-- Les médecins seront générés par JavaScript  du fate de ne pas encore eu de base de donne-->
+        </div>
+    </main>
+
+    <div id="filters-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Filtrer par spécialité</h2>
+            <div class="specialties-list">
+                <!-- Les spécialités seront générées par JavaScript du fate de ne pas encore eu de base de donne-->
+            </div>
+            <div class="modal-actions">
+                <button id="apply-filters">Appliquer</button>
+                <button id="reset-filters">Réinitialiser</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+</body>
+</html>

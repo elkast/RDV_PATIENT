@@ -1,0 +1,64 @@
+body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .connexion-conteneur {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+        }
+        .connexion-conteneur:hover {
+            transform: translateY(-5px);
+        }
+        .groupe-formulaire {
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input:focus {
+            border-color: #4a90e2;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(to right, #4a90e2, #357abd);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: linear-gradient(to right, #357abd, #2d6da3);
+            transform: translateY(-2px);
+        }
+        .message-erreur {
+            color: #e74c3c;
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }

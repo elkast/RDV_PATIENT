@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion</title>
+    <link rel="stylesheet" href="../static/connexion.css">
+
+</head>
+<body>
+    <div class="connexion-conteneur">
+        <h2>Connexion</h2>
+        <form id="formulaireConnexion">
+            <div class="groupe-formulaire">
+                <label for="courriel">Courriel:</label>
+                <input type="email" id="courriel" name="courriel" required placeholder="Entrez votre courriel">
+            </div>
+            <div class="groupe-formulaire">
+                <label for="motDePasse">Mot de passe:</label>
+                <input type="password" id="motDePasse" name="motDePasse" required placeholder="Entrez votre mot de passe">
+            </div>
+            <a href="./acceuil.html">Se connecter</a>
+            <div id="messageErreur" class="message-erreur"></div>
+        </form>
+    </div>
+</body>
+</html>
