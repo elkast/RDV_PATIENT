@@ -1,4 +1,4 @@
-from flask import Flask , render_template ,flash , request,redirect , url_for ,session
+from flask import Flask , render_template , request,redirect ,flash , url_for ,session , datetime
 
 
 app = Flask(__name__)
@@ -15,22 +15,44 @@ def index():
 #route pour les patiens 
 @app.route('#',methods=['GET' ,'POST'])
 def inscription_patient():
-    
     if request.method== 'POST':
-        # Logique pour traiter l'inscription du patient a ajouter ici
-        # Récupérer les données du formulaire  pour l inscription du patient 
-        # Créer un nouvel utilisateur dans la base de données cote patient je precise
         
-        flash('Inscription réussie! Vous pouvez maintenant vous connecter.', 'success') #message ephemere a remplacer par une page deja cree
-        return redirect(url_for('#')) # redirection vers la page d inscriptioin si tout les information n'y sont pas
-    return render_template('#') # redirection vers la page d acceuil si tout les information y sont
+        #recuperation des informations du formulaire
+        nom = request.form.get('nom')
+        prenom = request.form.get('prenom')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        confirm_password = request.form.get('confirm_password')
+        telephone = request.form.get('telephone')
+        date_naissance = request.form.get('date_naissance')
+        adresse = request.form.get('adresse')
 
-#_______________________________________connexion_____________
+        # Validation des données
+        if not nom or not prenom or not email or not password:
+            return redirect(url_for('inscription_patient'))
+            
+        if password != confirm_password:
+            flash('Les mots de passe ne correspondent pas.')
+            return redirect(url_for('inscription_patient'))
+            
+        # Vérifier si l'email existe déjà
+        patient_existant = Patient.query.filter_by(email=email).first()
+        if patient_existant:
+            flash('Cet email est déjà utilisé. Veuillez en choisir un autre.', 'danger')
+            return redirect(url_for('inscription_patient'))
+            
+        # Créer un nouvel utilisateur ?      
+    return render_template('patient/inscription.html')
+        
+        
+
+#_______________________________________connexion___________________________________________
 
 
 @app.route('#', methods=['GET', 'POST'])
 def patient_connexion():
     if request.method == 'POST':
+        
         # Logique pour vérifier les identifiants
         
         # Si valide, stocker l'ID du patient dans la session
@@ -119,6 +141,21 @@ def annuler_rdv(rdv_id):
     return redirect(url_for('liste_rdv'))
 
 
+# route pour la reprogrammation de reservation
+@app.route('', methods=[''])
+def reprogrammation():
+    return render_template('')
+
+
+#route pour la selection des specialites 
+@app.route('', methods=[''])
+def selection_specialite():
+    return render_template('')
+
+#route pour la selection des categories
+@app.route('', methods=[''])
+def selection_categories():
+    return render_template('')
 
 
 
