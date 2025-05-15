@@ -4,7 +4,7 @@ from flask import Flask , render_template ,flash , request,redirect , url_for ,s
 app = Flask(__name__)
 
 #route pour afficher l index principal 
-@app.route('#')
+@app.route('/')
 def index(): 
     return render_template('index.html')
 
@@ -16,8 +16,7 @@ def index():
 @app.route('#',methods=['GET' ,'POST'])
 def inscription_patient():
     
-    if request.method=='post':
-        
+    if request.method== 'POST':
         # Logique pour traiter l'inscription du patient a ajouter ici
         # Récupérer les données du formulaire  pour l inscription du patient 
         # Créer un nouvel utilisateur dans la base de données cote patient je precise
@@ -54,15 +53,19 @@ def patient_deconnexion():
 #_______________________________________fin-deconnexion_____________
 
 
-@app.route('/patient/dashboard')
+@app.route('./templates/acceuil')
 def patient_dashboard():
     # Vérifier si le patient est connecté
-    if 'patient_id' not in session:
+    if 'patient_id' not in session: 
+        return render_template('#')
         flash('Veuillez vous connecter pour accéder à votre tableau de bord.', 'warning') # ce message est temporaire et est a remplacer par une page deja cree
         return redirect(url_for('patient_connexion')) # retourne 
     # Récupérer les informations du patient et ses rendez-vous
     return render_template('patient/dashboard.html')
 
+# fin zone pour le forumulaire   inscription connexion patient
+
+# ________________________profil patient __________________________
 @app.route('/patient/profil', methods=['GET', 'POST'])
 def patient_profil():
     if 'patient_id' not in session:
@@ -87,6 +90,8 @@ def nouveau_rdv():
     # Récupérer la liste des médecins disponibles
     return render_template('rdv/nouveau.html')
 
+
+# route pour la liste des rendez -vous
 @app.route('/rdv/liste')
 def liste_rdv():
     if 'patient_id' not in session:
@@ -94,6 +99,8 @@ def liste_rdv():
     # Récupérer tous les rendez-vous du patient
     return render_template('rdv/liste.html')
 
+
+# route pour voir les details des rendez-vous  (mes rendez-vous dans notre code)
 @app.route('/rdv/<int:rdv_id>')
 def details_rdv(rdv_id):
     if 'patient_id' not in session:
@@ -101,6 +108,8 @@ def details_rdv(rdv_id):
     # Récupérer les détails du rendez-vous spécifique
     return render_template('rdv/details.html', rdv_id=rdv_id)
 
+
+#route pour l'annulation de prise de rendez-vous
 @app.route('/rdv/<int:rdv_id>/annuler', methods=['POST'])
 def annuler_rdv(rdv_id):
     if 'patient_id' not in session:
@@ -111,7 +120,7 @@ def annuler_rdv(rdv_id):
 
 
 
-# fin zone pour le forumulaire   inscription connexion patient
 
-if "__name__" == (__name__)
-app.run(deburg=True)
+
+if "__name__" == (__name__):
+    app.run(deburg=True)
