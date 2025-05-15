@@ -5,7 +5,7 @@ body {
     padding: 40px 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -13,118 +13,127 @@ body {
 
 .container {
     background-color: rgba(255, 255, 255, 0.98);
-    border-radius: 20px;
+    border-radius: 25px;
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.12),
-        0 0 40px rgba(33, 147, 176, 0.3);
-    padding: 50px 60px;
-    max-width: 600px;
+        0 10px 25px rgba(0, 0, 0, 0.15),
+        0 0 50px rgba(33, 147, 176, 0.35);
+    padding: 60px 70px;
+    max-width: 700px;
     width: 100%;
     box-sizing: border-box;
-    transition: box-shadow 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .container:hover {
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.18),
-        0 0 60px rgba(33, 147, 176, 0.5);
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        0 0 70px rgba(33, 147, 176, 0.6);
+    transform: translateY(-5px);
 }
 
 h1 {
     text-align: center;
-    margin-bottom: 45px;
-    color: #222;
-    font-weight: 700;
-    font-size: 2rem;
+    margin-bottom: 50px;
+    color: #1e3c72;
+    font-weight: 800;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 35px;
 }
 
 fieldset {
     border: none;
     padding: 0;
+    margin: 0;
 }
 
 legend {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #1e3c72;
-    border-bottom: 2px solid #2a5298;
-    padding-bottom: 6px;
+    border-bottom: 3px solid #2a5298;
+    padding-bottom: 8px;
     width: fit-content;
 }
 
 label {
     font-weight: 600;
-    color: #444;
-    margin-bottom: 8px;
+    color: #333;
+    margin-bottom: 10px;
     display: block;
-    font-size: 1rem;
+    font-size: 1.1rem;
 }
 
 input[type="text"],
 input[type="date"],
 textarea {
     width: 100%;
-    padding: 12px 16px;
-    border: 2.5px solid #ccc;
-    border-radius: 12px;
-    font-size: 1.05rem;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    padding: 15px 20px;
+    border: 3px solid #ddd;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
     box-sizing: border-box;
     resize: vertical;
     font-family: inherit;
+    background-color: #f8f9fa;
 }
 
 input[type="text"]:focus,
 input[type="date"]:focus,
 textarea:focus {
     border-color: #2a5298;
-    box-shadow: 0 0 10px rgba(42, 82, 152, 0.5);
+    box-shadow: 0 0 15px rgba(42, 82, 152, 0.4);
     outline: none;
+    background-color: #fff;
 }
 
 textarea {
-    min-height: 60px;
+    min-height: 80px;
 }
 
 .button-group {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 25px;
+    margin-top: 20px;
 }
 
 button {
     flex: 1;
-    padding: 16px 0;
-    font-size: 1.15rem;
+    padding: 18px 0;
+    font-size: 1.2rem;
     font-weight: 700;
     color: white;
     background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
     border: none;
-    border-radius: 16px;
+    border-radius: 20px;
     cursor: pointer;
-    box-shadow: 0 6px 14px rgba(30, 60, 114, 0.4);
-    transition: background 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 16px rgba(30, 60, 114, 0.4);
+    transition: all 0.3s ease;
     user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 button:hover,
 button:focus {
     background: linear-gradient(90deg, #2a5298 0%, #1e3c72 100%);
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(30, 60, 114, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(30, 60, 114, 0.6);
     outline: none;
 }
 
 button:active {
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(30, 60, 114, 0.5);
+    box-shadow: 0 10px 20px rgba(30, 60, 114, 0.5);
 }
 
 button[disabled] {
@@ -132,17 +141,47 @@ button[disabled] {
     cursor: not-allowed;
     box-shadow: none;
     transform: none;
+    opacity: 0.7;
 }
 
 /* Responsive */
-@media (max-width: 620px) {
+@media (max-width: 768px) {
     .container {
         padding: 40px 30px;
+        margin: 20px;
     }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
     .button-group {
         flex-direction: column;
     }
+    
     button {
         width: 100%;
+        padding: 16px 0;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    textarea {
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+    
+    legend {
+        font-size: 1.2rem;
     }
 }

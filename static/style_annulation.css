@@ -5,73 +5,74 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #edf1f9, #2a5298);
+    background: linear-gradient(135deg, #f5f7fa, #1e3c72);
 }
 
 .container {
     text-align: center;
     padding: 60px 50px;
-    background-color: rgba(255, 39, 39, 0.97);
+    background-color: rgba(255, 255, 255, 0.97);
     border-radius: 20px;
     box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.12),
-        0 0 40px rgba(193, 141, 141, 0.3);
+        0 8px 20px rgba(0, 0, 0, 0.15),
+        0 0 40px rgba(30, 60, 114, 0.2);
     min-width: 520px;
     max-width: 600px;
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .container:hover {
     box-shadow:
-        0 12px 30px rgba(0, 0, 0, 0.18),
-        0 0 60px rgba(255, 230, 64, 0.5);
+        0 12px 30px rgba(0, 0, 0, 0.2),
+        0 0 60px rgba(30, 60, 114, 0.3);
+    transform: translateY(-5px);
 }
 
 .message {
     margin: 30px 0;
     padding: 30px 35px;
-    background: linear-gradient(90deg, #d90e0e );
+    background: linear-gradient(90deg, #ff4b4b, #ff0000);
     color: #fff;
     border-radius: 14px;
     font-size: 1.5em;
     font-weight: 600;
-    text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.15);
+    text-shadow: 1.5px 1.5px 3px rgba(0, 0, 0, 0.2);
     line-height: 1.6;
-    box-shadow: 0 6px 15px rgb(255, 255, 255);
-    transition: transform 0.25s ease;
+    box-shadow: 0 6px 15px rgba(255, 75, 75, 0.3);
+    transition: all 0.25s ease;
 }
 
 .message:hover {
     transform: scale(1.03);
-    box-shadow: 0 8px 25px rgba(235, 15, 15, 0.6);
+    box-shadow: 0 8px 25px rgba(255, 75, 75, 0.4);
 }
 
 .btn {
     display: inline-block;
     padding: 16px 48px;
-    background: linear-gradient(90deg, #dcdcdc );
-    color: rgb(245, 1, 1);
+    background: linear-gradient(90deg, #ff4b4b, #ff0000);
+    color: #ffffff;
     text-decoration: none;
     border-radius: 12px;
     font-size: 1.3em;
     font-weight: 600;
     margin-top: 25px;
-    box-shadow: 0 6px 12px rgba(30, 60, 114, 0.35);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+    box-shadow: 0 6px 12px rgba(255, 75, 75, 0.3);
+    transition: all 0.25s ease;
     user-select: none;
 }
 
 .btn:hover,
 .btn:focus {
     transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(30, 60, 114, 0.5);
-    background: linear-gradient(90deg, #2a5298 0%, #1e3c72 100%);
+    box-shadow: 0 12px 25px rgba(255, 75, 75, 0.5);
+    background: linear-gradient(90deg, #ff0000, #cc0000);
     outline: none;
 }
 
 .btn:active {
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(30, 60, 114, 0.4);
+    box-shadow: 0 8px 18px rgba(255, 75, 75, 0.4);
 }
 
 /* Optional: smooth font rendering */

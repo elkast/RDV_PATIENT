@@ -4,6 +4,9 @@
             --success: #8cc152;
             --light: #f5f7fa;
             --dark: #434a54;
+            --hover-primary: #357abd;
+            --hover-secondary: #2a9fc9;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
         
         body {
@@ -12,148 +15,209 @@
             margin: 0;
             padding: 0;
             color: var(--dark);
+            line-height: 1.6;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+            box-sizing: border-box;
         }
         
         header {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
             padding: 20px 0;
             margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
         
         .logo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 600;
+            font-size: 28px;
+            font-weight: 700;
             color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .nav-links a {
-            margin-left: 20px;
+            margin-left: 25px;
             text-decoration: none;
             color: var(--dark);
             font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
         }
         
         .profile-single {
             display: grid;
-            gap: 25px;
+            gap: 30px;
             margin-top: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .profile-header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
-            padding: 20px;
+            padding: 30px;
             text-align: center;
+            border-radius: 15px 15px 0 0;
+            box-shadow: var(--shadow);
         }
         
         .profile-avatar {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             border: 4px solid white;
-            margin: 0 auto 15px;
+            margin: 0 auto 20px;
             background-color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
+            font-size: 48px;
             font-weight: 600;
-            color: var(--primary);            
+            color: var(--primary);   
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;         
+        }
+        
+        .profile-avatar:hover {
+            transform: scale(1.05);
         }
         
         .profile-name {
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 700;
             margin: 5px 0;
-            color: #f0f2f5;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         .profile-role {
-            font-size: 14px;
+            font-size: 16px;
             opacity: 0.9;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
         
         .profile-details {
-            padding: 20px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
         }
         
         .detail-section {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .detail-row {
             display: flex;
-            margin-bottom: 10px;
-            font-size: 14px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            align-items: center;
         }
         
         .detail-label {
-            font-weight: 500;
-            color: #666;
-            min-width: 100px;
+            font-weight: 600;
+            color: #555;
+            min-width: 150px;
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.5px;
         }
         
         .detail-value {
             color: var(--dark);
+            flex: 1;
         }
         
         .appointment-card {
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            padding: 20px;
-            margin-bottom: 10px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 25px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .appointment-card:hover {
+            transform: translateY(-5px);
         }
         
         .appointment-date {
-            font-weight: 500;
-            font-size: 16px;
-            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--primary);
         }
         
         .appointment-doctor {
-            font-weight: 500;
-            font-size: 16px;
-            margin-bottom: 5px;
+            font-weight: 600;
+            font-size: 17px;
+            margin-bottom: 8px;
         }
         
         .appointment-specialty {
-            font-size: 14px;
+            font-size: 15px;
             color: #666;
+            font-style: italic;
         }
         
         .profile-button {
             display: block;
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             background: var(--primary);
             color: white;
             border: none;
-            border-radius: 0 0 10px 10px;
-            font-size: 14px;
-            font-weight: 500;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
-            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .profile-button:hover {
-            background: var(--secondary);
+            background: var(--hover-primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
         }
         
         .edit-button {
@@ -172,17 +236,37 @@
             font-family: 'Montserrat', sans-serif;
             color: var(--primary);
             text-align: center;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
         
         h2 {
             font-family: 'Montserrat', sans-serif;
             color: var(--primary);
             text-align: center;
+            font-size: 28px;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
         }
         
         h3 {
             font-family: 'Montserrat', sans-serif;
             color: var(--primary);
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: 600;
         }
